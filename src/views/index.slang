@@ -19,6 +19,8 @@ table
         td= post.content
         td= post.author.name
         td= post.tags.map(&.name).join(", ")
+        / FIXME
+        / table name "posts" specified more than once (PQ::PQError)
         td= post.dependencies.map(&.title).join(", ")
         td= post.dependents.map(&.title).join(", ")
 
