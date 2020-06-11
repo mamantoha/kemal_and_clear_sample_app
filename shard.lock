@@ -5,8 +5,8 @@ shards:
     version: 1.11.2+git.commit.c3c3467953654554b72c24e7b853d6fbb23f10c0
 
   clear:
-    github: anykeyh/clear
-    commit: 082e924954837b930e12cba44d169438c9561f8f
+    git: https://github.com/anykeyh/clear.git
+    version: 0.9+git.commit.cac0806df13caedff7a70d3d98a1d24ce95432ee
 
   db:
     git: https://github.com/crystal-lang/crystal-db.git
