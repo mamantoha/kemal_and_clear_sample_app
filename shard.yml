@@ -10,7 +10,7 @@ dependencies:
     branch: master
   clear:
     github: anykeyh/clear
-    branch: master
+    branch: v0.9
   slang:
     github: jeromegn/slang
     branch: master

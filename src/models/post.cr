@@ -12,11 +12,13 @@ class Post
   full_text_searchable "tsv", catalog: "pg_catalog.simple"
 
   belongs_to author : Author
-  has_many tags : Tag, through: PostTag
 
-  has_many relationships : Relationship, foreign_key: "leader_id"
-  has_many dependencies : Post, through: Relationship, foreign_key: "follower_id", own_key: "leader_id"
-  has_many dependents : Post, through: Relationship, foreign_key: "leader_id", own_key: "follower_id"
+  has_many post_tags : PostTag, foreign_key: "post_id"
+  has_many tags : Tag, through: :post_tags, relation: :tag
+
+  has_many relationships : Relationship
+  has_many dependencies : Post, through: :relationships, relation: :leader
+  has_many dependents : Post, through: :relationships, relation: :follower
 
   def tags=(names : Array(String))
     names.map do |name|
